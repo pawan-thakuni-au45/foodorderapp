@@ -35,7 +35,7 @@ const RestaurantMenu = () => {
         }=resMenu?.cards[2]?.card?.card?.info
     
         console.log("resmwnuuuu",resMenu);
- const {itemCards}=resMenu?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card
+ const {itemCards}=resMenu?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card
  console.log("frfgr",itemCards);
 
   return (

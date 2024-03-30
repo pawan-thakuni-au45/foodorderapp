@@ -2,6 +2,7 @@ import React, {  useState } from 'react'
 import { useEffect } from 'react';
 import RestaurantCard from './RestaurantCard.js';
 import { Link } from 'react-router-dom';
+import useOnlineStatus from '../utils/useOnlineStatus.js';
 
 const Body = () => {
     const[restaurantList,setrestaurantList]=useState([])
@@ -19,12 +20,17 @@ const Body = () => {
                 const jso=await data.json();
                 console.log('kkj',jso);
                
-                     setrestaurantList(jso.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+                     setrestaurantList(jso?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
                       );
         
 
 
            }
+           const OnlineStatus=useOnlineStatus()
+if(OnlineStatus===false){
+  return <h1>Looks like you are offline:</h1>
+}
+
 
           
            
