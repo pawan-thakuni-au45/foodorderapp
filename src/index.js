@@ -5,10 +5,15 @@ import App from './App';
 import About from './components/About';
 import Error from './components/Error';
 import Contact from './components/Contact'
+// import Grocery from './components/Grocery';
 import Body from './components/Body'
 import reportWebVitals from './reportWebVitals';
 import {createBrowserRouter,RouterProvider} from 'react-router-dom'
 import RestaurantMenu from './components/RestaurantMenu';
+import { Suspense } from 'react';
+import { lazy } from 'react';
+
+ const Grocery=lazy(()=>import("./components/Grocery"))
 
  const approuter=createBrowserRouter([
   
@@ -31,6 +36,10 @@ import RestaurantMenu from './components/RestaurantMenu';
     {
       path:"/contact",
       element:<Contact/>
+    },
+    {
+      path:"/grocery",
+      element:<Suspense fallback={<h1>Loading...</h1>}><Grocery/></Suspense>
     },
     {
       path:"/restaurant/:resId",
