@@ -4,25 +4,25 @@ const RestaurantCard = (props) => {
   const {resData}=props;
   console.log(resData)
   return (
-    <div className='main-con'>
+    
    
-    <div className='res-card'>
+    <div className=" bg-[#f0f0f0]  w-[250px] m-[20px] hover:bg-gray-300">
    <div>
-       <img className='res-img' alt='img-logo' src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+resData.info.cloudinaryImageId
+       <img className=" h-[200px] w-[250px] p-4 rounded-2xl" alt='img-logo' src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+resData.info.cloudinaryImageId
       }
      
       ></img>
       </div>
-     <div>
+     <div className="w-[250px]">
        
-       <h4>{resData.info.name}</h4>
-       <h4>{resData.info.name}</h4>
+       <h3 className="font-bold py-4 text-lg">{resData.info.name}</h3>
+       <h5 className="w-[250px]">{resData.info.cuisines.join(",")}</h5>
+       <h4>{resData.info.costForTwo}</h4>
        <h4>{resData.info.avgRating}</h4>
-       <h4>{resData.info.name}</h4>
        </div>
      
     </div>
-    </div>
+   
    
   )
 }

@@ -20,7 +20,7 @@ const Body = () => {
                 const jso=await data.json();
                 console.log('kkj',jso);
                
-                     setrestaurantList(jso?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+                     setrestaurantList(jso?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
                       );
         
 
@@ -43,7 +43,7 @@ if(OnlineStatus===false){
     }}></button>
     
     </div>
-    <div className='res-contain'>
+    <div className="ml-[40px] flex flex-wrap ">
     {restaurantList.map(restaurant=>(
           <Link key={restaurant.info.id} to={"/restaurant/"+restaurant.info.id}><RestaurantCard  resData={restaurant}/></Link>
   ))}

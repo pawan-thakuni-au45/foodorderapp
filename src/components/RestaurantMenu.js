@@ -9,8 +9,8 @@ const RestaurantMenu = () => {
     console.log("resid",resId);
 
     useEffect(()=>{
-        fetchMenu()
-    },[])
+        fetchMenu();
+    })
 
     const fetchMenu=async()=>{
         const data=await fetch(
