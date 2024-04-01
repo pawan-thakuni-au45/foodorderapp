@@ -16,7 +16,7 @@ const RestaurantCard = (props) => {
      <div className="w-[250px]">
        
        <h3 className="font-bold py-4 text-lg">{resData.info.name}</h3>
-       <h5 className="w-[250px]">{resData.info.cuisines.join(",")}</h5>
+       <h5 className="break-words">{resData.info.cuisines.join(",")}</h5>
        <h4>{resData.info.costForTwo}</h4>
        <h4>{resData.info.avgRating}</h4>
        </div>
