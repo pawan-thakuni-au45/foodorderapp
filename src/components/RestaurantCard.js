@@ -3,6 +3,7 @@ import React from 'react'
 const RestaurantCard = (props) => {
   const {resData}=props;
   console.log(resData)
+  
   return (
     
    
@@ -28,3 +29,5 @@ const RestaurantCard = (props) => {
 }
 
 export default RestaurantCard
+
+

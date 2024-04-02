@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
+import ResCatagory from './ResCatagory';
 
 const RestaurantMenu = () => {
     const[resMenu,setResMenu]=useState(null)
@@ -38,15 +39,19 @@ const RestaurantMenu = () => {
  const {itemCards}=resMenu?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card
  console.log("frfgr",itemCards);
 
+ const catagory=resMenu?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter((c)=>c.card?.card?.["@type"]==="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")
+ console.log("c=>",catagory);
+
+
   return (
     <div>
-      <h1>{name}</h1>
+      <h1 className="font-bold text-2xl">{name}</h1>
       <p> {cuisines.join(",")}-{costForTwoMessage}</p>
-      <h2>Menu</h2>
-      <ul>
-      {itemCards.map(items=><li key={items.card.info.id}>{items.card.info.name}</li>)}
-        
-      </ul>
+      {
+        catagory.map((cat)=>(
+          <ResCatagory key={cat.card.card.title} data={cat.card.card}/>
+        ))
+      }
     </div>
   )
 }

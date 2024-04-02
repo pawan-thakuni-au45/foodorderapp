@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import useOnlineStatus from '../utils/useOnlineStatus'
+import UserContext from '../utils/UserContext'
 
 
 const Header = () => {
+  const {loggedInUser}=useContext(UserContext)
   const onlineStatus=useOnlineStatus()
   return (
-    <div className="flex justify-between bg-pink-500 border-green">
+    <div className="flex justify-between bg-orange-500 border-green">
     
     <div>
     
@@ -17,13 +19,14 @@ const Header = () => {
     </div>
     <div className="flex">
     <ul className="flex py-16 px-7 mx-5">
-    <li className="px-2">onlineStatus:{onlineStatus ?"green":"red"}</li>
+    <li className="px-2">onlineStatus:{onlineStatus ?"🟢":"🔴"}</li>
     <li className="px-2"><Link to="/">Home</Link></li>
     <li className="px-2"><Link to="/about">About us</Link></li>
     <li className="px-2"><Link to="/contact">Contact us</Link></li>
     <li className="px-2"><Link to="/grocery">Grocery</Link></li>
 
-    <li>Card</li>
+    <li className="px-2">Card</li>
+    <li className="font-bold">Login :{loggedInUser}</li>
 
     
     </ul>
