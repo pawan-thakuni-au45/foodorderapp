@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import ItemList from './ItemList';
 
 const ResCatagory = ({data}) => {
+    
     const [showItem,setShowItem]=useState(false)
-    console.log("d",data);
+   
     const showItems=()=>{
         setShowItem(!showItem)
     }

@@ -31,11 +31,13 @@ const RestaurantMenu = () => {
     if(resMenu===null){
        return <h1>loading..</h1>
     }
-    console.log("resmwnu",resMenu);
+   
      const {name,cuisines,costForTwoMessage
         }=resMenu?.cards[2]?.card?.card?.info
     
-        console.log("resmwnuuuu",resMenu);
+        if(resMenu===null){
+          return <h1>loading..</h1>
+       }
  const {itemCards}=resMenu?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card
  console.log("frfgr",itemCards);
 
@@ -43,11 +45,28 @@ const RestaurantMenu = () => {
  console.log("c=>",catagory);
 
 
+
+
   return (
-    <div>
-      <h1 className="font-bold text-2xl">{name}</h1>
-      <p> {cuisines.join(",")}-{costForTwoMessage}</p>
+    
+   
+  <div className="text-center">
+    
+
+
+  <h1 className="my-6 text-2xl font-bold">{name}</h1>
+  <p className="text-lg font-bold">
+    {cuisines.join(', ')} - {costForTwoMessage}
+  </p>
+
+  
+ 
+   
+      
+     
       {
+       
+         
         catagory.map((cat)=>(
           <ResCatagory key={cat.card.card.title} data={cat.card.card}/>
         ))
@@ -57,3 +76,11 @@ const RestaurantMenu = () => {
 }
 
 export default RestaurantMenu
+
+// <p> {cuisines.join(",")}-{costForTwoMessage}</p>
+// {itemCards.map((item)=>(
+//   <li key={item.card.info.id}>
+//   <h1 className="font-bold text-2xl">{item.card.info.name}</h1>
+
+//   </li>
+// ))}
