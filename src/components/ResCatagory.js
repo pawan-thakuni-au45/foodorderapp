@@ -16,9 +16,10 @@ const ResCatagory = ({data}) => {
      <span className="font-bold">{data.title}</span>
      <span>🔽</span>
      </div>
+     </div>
     { showItem && <ItemList items={data.itemCards}/>}
     
-     </div>
+     
     
     </div>
   )
