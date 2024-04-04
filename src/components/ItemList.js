@@ -1,18 +1,24 @@
 import React from 'react'
+import { useDispatch } from 'react-redux';
+import { addItem } from '../utils/cartSlice';
+import CartPage from './CartPage';
 
 const ItemList = ({items}) => {
-
+const dispatch=useDispatch()
 
     const handleAddItem = (item) => {
-        console.log('madarchooooooodrfrf');
+        dispatch(addItem(item));
+        <CartPage itempage={item}/>
+        
     }
+    
   return (
     
    <div>
       {items.map((item)=>(
         <div
         key={item.card.info.id}
-        className="p-2 mx-auto border-gray-200 border-b-2 text-left flex justify-between"
+        className="p-2 m-2 border-gray-200 border-b-2 text-left flex justify-between"
       >
         <div className="w-9/12">
           <div className="py-2">
@@ -42,13 +48,15 @@ const ItemList = ({items}) => {
 
 
           </button>
-        </div>
-        <img alt="img" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+item.card.info.imageId} className="w-full" />
+        </div >
+        <img className="m-auto" alt="img" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+item.card.info.imageId} />
       </div>
-    </div>
+    </div> 
   ))}
 </div>
 );
 };
 
 export default ItemList
+
+

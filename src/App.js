@@ -6,6 +6,8 @@ import Footer from './components/Footer';
 import { Outlet } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import UserContext from './utils/UserContext';
+import appStore from './utils/appStore';
+import {Provider} from "react-redux"
 
 
 
@@ -24,6 +26,7 @@ function App() {
   },[])
   
   return (
+    <Provider store={appStore}>
     <UserContext.Provider value={{loggedInUser:userName,setUserName}}>
     <div className="App">
       
@@ -33,6 +36,7 @@ function App() {
      
     </div>
     </UserContext.Provider>
+    </Provider>
   );
 }
 

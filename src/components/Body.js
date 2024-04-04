@@ -8,7 +8,13 @@ import UserContext from '../utils/UserContext.js';
 
 const Body = () => {
     const[restaurantList,setrestaurantList]=useState([])
-    console.log("list",restaurantList);
+    console.log("liiii",restaurantList);
+    const [filterres,setFilterres]=useState([]);
+    
+
+    const[searchText,setSearchText]=useState("")
+    
+  
     const {loggedInUser,setUserName}=useContext(UserContext)
   
 
@@ -24,8 +30,10 @@ const Body = () => {
                 const jso=await data.json();
                 console.log('kkj',jso);
                
-                     setrestaurantList(jso?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-                      );
+                     setrestaurantList(jso?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+                     setFilterres(jso?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+
+                      
         
 
 
@@ -40,11 +48,31 @@ if(OnlineStatus===false){
            
   return (
     <div className='body'>
-    <div className='search-item'>
-    <button className="bg-red" onClick={()=>{
-      const filteredList=restaurantList.filter((res)=>res.info.avgRating>4.2)
-      setrestaurantList(filteredList)
-    }}>button</button>
+    <div className='filter flex'>
+    <div className='search m-4 p-4 border-black '>
+    <input type="text" className='ser-box border-solid  border-black bg-gray-300' value={searchText} onChange={(e)=>{
+      setSearchText(e.target.value);
+    }}/>
+    <button className="px-8 py-2 bg-green-100 m-4 rounded-3xl" onClick={()=>{
+      const filteredRes=restaurantList.filter((res)=>res.info.name.toLowerCase().includes(searchText.toLowerCase()));
+      setFilterres(filteredRes);
+    }}>
+    search
+    </button>
+ 
+    
+    </div>
+    <div className="px-1 py-1 bg-gray-100 my-12 p-4 rounded-lg hover:bg-red-400">
+     <button className='filter-btn'  onClick={()=>{
+        const filterlist=restaurantList.filter((res) => res.info.avgRating > 4.2 );
+        setFilterres(filterlist);
+        
+           
+     }} >Top Rated Restaurants</button>
+    
+     </div>
+    
+  
     <div className="search m-4 p-4 flex items-center">
     <label>UserName:</label>
    
@@ -57,7 +85,7 @@ if(OnlineStatus===false){
     
     </div>
     <div className="ml-[40px] flex flex-wrap bg-black-600 ">
-    {restaurantList.map(restaurant=>(
+    {filterres.map(restaurant=>(
           <Link key={restaurant.info.id} to={"/restaurant/"+restaurant.info.id}>
           
           <RestaurantCard  resData={restaurant}/></Link>
@@ -69,3 +97,5 @@ if(OnlineStatus===false){
 }
 
 export default Body
+
+

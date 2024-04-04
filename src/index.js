@@ -12,6 +12,7 @@ import {createBrowserRouter,RouterProvider} from 'react-router-dom'
 import RestaurantMenu from './components/RestaurantMenu';
 import { Suspense } from 'react';
 import { lazy } from 'react';
+import CartPage from './components/CartPage';
 
  const Grocery=lazy(()=>import("./components/Grocery"))
 
@@ -44,7 +45,12 @@ import { lazy } from 'react';
     {
       path:"/restaurant/:resId",
       element:<RestaurantMenu/>
-    }
+    },
+    {
+    path:"/cartlist",
+    element:<CartPage/>
+  }
+  
     
     
   
