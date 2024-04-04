@@ -4,6 +4,7 @@ import RestaurantCard from './RestaurantCard.js';
 import { Link } from 'react-router-dom';
 import useOnlineStatus from '../utils/useOnlineStatus.js';
 import UserContext from '../utils/UserContext.js';
+import Shimmer from './Shimmer.js';
 
 
 const Body = () => {
@@ -38,11 +39,19 @@ const Body = () => {
 
 
            }
+
+           
            const OnlineStatus=useOnlineStatus()
 if(OnlineStatus===false){
   return <h1>Looks like you are offline:</h1>
 }
 
+if(restaurantList.length===0)
+{
+  return(
+    <Shimmer/>
+  )
+}
 
           
            
