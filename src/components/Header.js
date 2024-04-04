@@ -25,7 +25,7 @@ const Header = () => {
     <li className="px-2">onlineStatus:{onlineStatus ?"🟢":"🔴"}</li>
     <li className="px-2"><Link to="/">Home</Link></li>
     <li className="px-2"><Link to="/about">About us</Link></li>
-    <li className="px-2"><Link to="/contact">Contact us</Link></li>
+    
     <li className="px-2"><Link to="/grocery">Grocery</Link></li>
 
     <Link to="/cartlist"><li className="px-2">Card -({cart.length})</li></Link>

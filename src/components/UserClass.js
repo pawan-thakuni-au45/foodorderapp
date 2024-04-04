@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class UserClass extends React.Component{
     constructor(props){
@@ -13,6 +14,7 @@ class UserClass extends React.Component{
 
         }
     }
+   
     }
     async componentDidMount(){
          const data=await fetch("https://api.github.com/users/pawan-thakuni-au45")
@@ -23,18 +25,25 @@ class UserClass extends React.Component{
             userInfo:json,
            
          })
-         console.log(json);
+         console.log('github',json);
          
     }
    
+   
 
     render(props){
-        const {name,location,avatar_url }=this.state.userInfo
+       
+        const {name,avatar_url,url }=this.state.userInfo
         return(
-            <div className="clas">
+            <div className="item-center">
             <h1 className="name-con">{name}</h1>
-            <img alt="img" src={avatar_url }></img>
-            <h2>Location:{location}</h2>
+    
+            <h4 className="font-bold">git hub link for this project</h4><a href="https://github.com/pawan-thakuni-au45/foodorderapp"  target="_blank" className="bg-red" >Click on me 😂 </a>
+            <img className="m-auto w-3/12" alt="img" src={avatar_url }></img>
+
+            
+    
+          
             </div>
         )
     }

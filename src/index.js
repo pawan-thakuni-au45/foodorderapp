@@ -34,10 +34,7 @@ import CartPage from './components/CartPage';
       
 
     },
-    {
-      path:"/contact",
-      element:<Contact/>
-    },
+   
     {
       path:"/grocery",
       element:<Suspense fallback={<h1>Loading...</h1>}><Grocery/></Suspense>

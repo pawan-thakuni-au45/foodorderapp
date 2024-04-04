@@ -3,7 +3,7 @@ import UserClass from './UserClass.js'
 
 const About = () => {
   return (
-    <div>Ab
+    <div>
     <UserClass name={"Pawan Thakuni"} location={"Uttarakhand,India"}/>
     </div>
   )
