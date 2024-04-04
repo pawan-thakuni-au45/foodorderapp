@@ -64,7 +64,7 @@ if(OnlineStatus===false){
     </div>
     <div className="px-1 py-1 bg-gray-100 my-12 p-4 rounded-lg hover:bg-red-400">
      <button className='filter-btn'  onClick={()=>{
-        const filterlist=restaurantList.filter((res) => res.info.avgRating > 4.2 );
+        const filterlist=restaurantList.filter((res) => res.info.avgRating > 4.3 );
         setFilterres(filterlist);
         
            
