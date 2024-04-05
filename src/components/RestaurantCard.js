@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 const RestaurantCard = (props) => {
   const {resData}=props;
   console.log(resData)
@@ -18,8 +19,8 @@ const RestaurantCard = (props) => {
        
        <h3 className="font-bold py-4 text-lg">{resData.info.name}</h3>
        <h5 className="break-words">{resData.info.cuisines.join(",")}</h5>
-       <h4>{resData.info.costForTwo}</h4>
-       <h4>{resData.info.avgRating}</h4>
+       <h4 className='font-bold'>{resData.info.costForTwo}</h4>
+       <h4 className="bg-green-400 w-12 m-auto rounded-sm">⭐{resData.info.avgRating}</h4>
        </div>
      
     </div>

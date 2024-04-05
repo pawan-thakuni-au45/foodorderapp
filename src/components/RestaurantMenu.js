@@ -68,8 +68,7 @@ const RestaurantMenu = () => {
      
       {
        
-         
-        catagory.map((cat)=>(
+         catagory.map((cat)=>(
           <ResCatagory key={cat.card.card.title} data={cat.card.card}/>
         ))
       }

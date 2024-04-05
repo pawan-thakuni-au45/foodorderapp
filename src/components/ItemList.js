@@ -14,7 +14,7 @@ const dispatch=useDispatch()
     
   return (
     
-   <div>
+   <div className='w-6/12 mx-auto my-4 bg-gray-50 p-4 shadow-lg' >
       {items.map((item)=>(
         <div
         key={item.card.info.id}
@@ -22,15 +22,16 @@ const dispatch=useDispatch()
       >
         <div className="w-9/12">
           <div className="py-2">
-            <span>{item.card.info.name}</span>
+            <span className='font-bold'>{item.card.info.name}</span>
             <span>
               - ₹
               {item.card.info.price
                 ? item.card.info.price / 100
                 : item.card.info.defaultPrice / 100}
             </span>
+            <p className="text-xs">{item.card.info.description}</p>
           </div>
-          <p className="text-xs">{item.card.info.description}</p>
+          
         </div>
     
 
