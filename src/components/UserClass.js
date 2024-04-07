@@ -38,7 +38,7 @@ class UserClass extends React.Component{
             <div className="item-center">
             <h1 className="name-con">{name}</h1>
     
-            <h4 className="font-bold">git hub link for this project</h4><a href="https://github.com/pawan-thakuni-au45/foodorderapp"  target="_blank" className="bg-red" >Click on me 😂 </a>
+            <h4 className="font-bold">git hub link for this project</h4><a href="https://github.com/pawan-thakuni-au45/foodorderapp"  target="_blank" rel="noreferrer" className="bg-red" >Click on me 😂 </a>
             <img className="m-auto w-3/12" alt="img" src={avatar_url }></img>
 
             
