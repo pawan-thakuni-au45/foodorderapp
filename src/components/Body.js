@@ -56,8 +56,8 @@ if(restaurantList?.length===0)
           
            
   return (
-    <div className=' m-0 w-full md:m-auto md:w-4/5 flex flex-col gap-6 justify-center '>
-    <div className='filter  m-0 w-full md:m-auto md:w-4/5 flex flex-col gap-6 justify-center'>
+    <div className=' m-0 w-full md:m-auto md:w-4/5 flex flex-col justify-center '>
+    <div className='filter  m-0 w-full md:m-auto md:w-4/5 flex flex-col  justify-center'>
     <div className='flex  flex-col md:flex-row '>
     <div className='search m-4 p-4 border-black '>
     <input type="text" className='ser-box border-solid  border-black bg-gray-300' value={searchText} onChange={(e)=>{
@@ -95,7 +95,7 @@ if(restaurantList?.length===0)
     </div>
     
     </div>
-    <div className="ml-[40px] flex flex-wrap bg-black-600 my-2">
+    <div className="ml-[40px] flex flex-wrap bg-black-600 mt-2">
     {filterres.map(restaurant=>(
           <Link key={restaurant.info.id} to={"/restaurant/"+restaurant.info.id}>
           
