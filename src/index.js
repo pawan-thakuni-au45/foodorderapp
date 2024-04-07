@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import About from './components/About';
 import Error from './components/Error';
-import Contact from './components/Contact'
+
 // import Grocery from './components/Grocery';
 import Body from './components/Body'
 import reportWebVitals from './reportWebVitals';

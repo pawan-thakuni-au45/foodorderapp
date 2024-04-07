@@ -1,16 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { CLOUDINARY_IMG_URL } from '../utils/constant';
 
 
 const RestaurantCard = (props) => {
   const {resData}=props;
   console.log(resData)
   
+ 
+  
   return (
     
    
     <div className=" bg-[#f0f0f0]  w-[250px] m-[20px] hover:bg-gray-300">
    <div>
-       <img className=" h-[200px] w-[250px] p-4 rounded-2xl" alt='img-logo' src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+resData.info.cloudinaryImageId
+       <img className=" h-[200px] w-[250px] p-4 rounded-2xl" alt='img-logo' src={ CLOUDINARY_IMG_URL + resData.info.cloudinaryImageId
       }
      
       ></img>

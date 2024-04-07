@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux';
 import { addItem } from '../utils/cartSlice';
 import CartPage from './CartPage';
+import { CLOUDINARY_IMG_URL } from '../utils/constant';
 
 const ItemList = ({items}) => {
 const dispatch=useDispatch()
@@ -50,7 +51,7 @@ const dispatch=useDispatch()
 
           </button>
         </div >
-        <img className="m-auto" alt="img" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+item.card.info.imageId} />
+        <img className="m-auto" alt="img" src={CLOUDINARY_IMG_URL+item.card.info.imageId} />
       </div>
     </div> 
   ))}

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import useOnlineStatus from '../utils/useOnlineStatus.js';
 import UserContext from '../utils/UserContext.js';
 import Shimmer from './Shimmer.js';
-
+import {RES_URL} from '../utils/constant.js'
 
 const Body = () => {
     const[restaurantList,setrestaurantList]=useState([])
@@ -26,7 +26,7 @@ const Body = () => {
 
            const fetchData =async ()=>{
                const data= await fetch(
-                "https://www.swiggy.com/dapi/restaurants/list/v5?lat=11.2587531&lng=75.78041&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+                RES_URL
                );
                 const jso=await data.json();
                 console.log('kkj',jso);
@@ -95,7 +95,7 @@ if(restaurantList?.length===0)
     </div>
     
     </div>
-    <div className="ml-[40px] flex flex-wrap bg-black-600 ">
+    <div className="ml-[40px] flex flex-wrap bg-black-600 my-2">
     {filterres.map(restaurant=>(
           <Link key={restaurant.info.id} to={"/restaurant/"+restaurant.info.id}>
           

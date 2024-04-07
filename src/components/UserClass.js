@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
 
 class UserClass extends React.Component{
     constructor(props){
@@ -9,7 +9,7 @@ class UserClass extends React.Component{
       this.state={
         userInfo:{
         name:'name',
-        location:'india',
+        
         avatar_url:"hb"
 
         }
@@ -33,7 +33,7 @@ class UserClass extends React.Component{
 
     render(props){
        
-        const {name,avatar_url,url }=this.state.userInfo
+        const {name,avatar_url }=this.state.userInfo
         return(
             <div className="item-center">
             <h1 className="name-con">{name}</h1>
