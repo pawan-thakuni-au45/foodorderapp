@@ -9,7 +9,7 @@ import {RES_URL} from '../utils/constant.js'
 
 const Body = () => {
     const[restaurantList,setrestaurantList]=useState([])
-    console.log("liiii",restaurantList);
+   
     const [filterres,setFilterres]=useState([]);
     
 
@@ -29,7 +29,7 @@ const Body = () => {
                 RES_URL
                );
                 const jso=await data.json();
-                console.log('kkj',jso);
+               
                
                      setrestaurantList(jso?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
                      setFilterres(jso?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
@@ -96,7 +96,8 @@ if(restaurantList?.length===0)
     
     </div>
     <div className="ml-[40px] flex flex-wrap bg-black-600 mt-2">
-    {filterres.map(restaurant=>(
+
+    {filterres.map((restaurant)=>(
           <Link key={restaurant.info.id} to={"/restaurant/"+restaurant.info.id}>
           
           <RestaurantCard  resData={restaurant}/></Link>
@@ -110,4 +111,3 @@ if(restaurantList?.length===0)
 export default Body
 
 
-// body flex flex-col md:flex-0
