@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import { CDN_URL } from '../utils/constant';
+import React  from 'react'
+
 
 
 const RestaurantCard = (props) => {

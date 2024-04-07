@@ -5,10 +5,10 @@ import { RES_MENU_URL } from '../utils/constant';
 
 const RestaurantMenu = () => {
     const[resMenu,setResMenu]=useState(null)
-    console.log(resMenu);
+  
 
     const {resId}=useParams()
-    console.log("resid",resId);
+    
 
     useEffect(()=>{
       
