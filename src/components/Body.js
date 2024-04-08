@@ -32,7 +32,7 @@ const Body = () => {
                
                
                      setrestaurantList(jso?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-                     setFilterres(jso?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+                     setFilterres(jso?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 
                       
         
